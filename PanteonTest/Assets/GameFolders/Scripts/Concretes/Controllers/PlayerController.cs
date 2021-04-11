@@ -30,15 +30,11 @@ namespace PanteonRemoteTest.Controllers
 
         }
 
-        private void Update()
-        {
-            _playerRotator.RotatePlayer(_input.MoveDirection, _rotateSpeed);
-        }
-
         private void FixedUpdate()
         {
             //Debug.Log(_input.MoveDirection);
             _mover.MoveAction(_input.MoveDirection, _horizontalMoveSpeed);
+            _playerRotator.RotatePlayer(_input.MoveDirection, _rotateSpeed);
         }
 
         private void LateUpdate()

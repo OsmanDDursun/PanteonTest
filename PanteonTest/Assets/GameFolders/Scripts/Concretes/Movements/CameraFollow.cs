@@ -16,9 +16,12 @@ namespace PanteonRemoteTest.Movements
             _offset = Mathf.Abs(_playerController.transform.position.z - transform.position.z);
         }
 
-        private void LateUpdate()
+        void FixedUpdate()
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, _playerController.transform.position.z - _offset);
+            Vector3 targetPos = new Vector3(_playerController.transform.position.x, transform.position.y, _playerController.transform.position.z - _offset);
+            Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, 0.125f);
+            transform.position = smoothPos;
+
         }
     }
 }
