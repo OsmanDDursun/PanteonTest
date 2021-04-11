@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RotatorStick
   - RotatorBody
+  - HalfDonut
   layers:
   - Default
   - TransparentFX
