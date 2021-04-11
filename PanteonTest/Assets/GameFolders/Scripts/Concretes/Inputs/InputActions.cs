@@ -24,16 +24,16 @@ namespace PanteonRemoteTest.Inputs
                     ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
                     ""id"": ""2d99e031-7dff-496e-b916-646b4d97e368"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""KeyBoardAD"",
+                    ""name"": ""KeyBoardWASD"",
                     ""id"": ""deeffdf0-242b-4e99-b2c7-da225f403ada"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -42,8 +42,30 @@ namespace PanteonRemoteTest.Inputs
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""d69f0d38-b823-4818-9452-22adaf0c8473"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""e2f769ed-40c1-4faf-8732-f2435db3e839"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""1d3dd4f7-8e88-4306-9e3b-2f85a27e21f5"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -53,8 +75,8 @@ namespace PanteonRemoteTest.Inputs
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""e2f769ed-40c1-4faf-8732-f2435db3e839"",
+                    ""name"": ""Right"",
+                    ""id"": ""17dd3c03-c992-4b7d-8d84-552a4482ce57"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",

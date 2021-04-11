@@ -10,19 +10,19 @@ namespace PanteonRemoteTest.Inputs
     {
         PlayerInput _playerInput;
 
-        public float MoveDirection { get; private set; }
+        public Vector3 MoveDirection { get; private set; }
 
         public InputReader(PlayerInput playerInput)
         {
             _playerInput = playerInput;
 
-            _playerInput.currentActionMap.actions[0].performed += OnHorizontalMove;  //AD Inputs
+            _playerInput.currentActionMap.actions[0].performed += OnMove;  //WASD Inputs
 
         }
 
-        private void OnHorizontalMove(InputAction.CallbackContext obj)
+        private void OnMove(InputAction.CallbackContext obj)
         {
-            MoveDirection = obj.ReadValue<float>(); //Hareket Yönü MoveDirection prop una tanımlandı Sağ +1 Sol -1
+            MoveDirection = new Vector3(obj.ReadValue<Vector2>().x, 0f, obj.ReadValue<Vector2>().y); //Hareket Yönü MoveDirection prop una tanımlandı Return (-1,+1)
         }
     }
 }

@@ -9,23 +9,23 @@ namespace PanteonRemoteTest.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float _moveSpeed = 10f;
+        [SerializeField] float _horizontalMoveSpeed = 10f;
 
         InputReader _input;
-        HorizontalMover _mover;
+        PlayerMover _mover;
 
-        public float MoveSpeed => _moveSpeed;
+        public float HorizontalMoveSpeed => _horizontalMoveSpeed;
 
         private void Awake()
         {
             _input = new InputReader(GetComponent<PlayerInput>());
-            _mover = new HorizontalMover(this);
+            _mover = new PlayerMover(this);
         }
 
         private void FixedUpdate()
         {
             Debug.Log(_input.MoveDirection);
-            _mover.MoveAction(_input.MoveDirection); //karakter SağSol harketi
+            _mover.MoveAction(_input.MoveDirection, _horizontalMoveSpeed); //karakter SağSol harketi
         }
     }
 }

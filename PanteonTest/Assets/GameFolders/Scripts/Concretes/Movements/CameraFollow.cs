@@ -9,7 +9,7 @@ namespace PanteonRemoteTest.Movements
     {
         PlayerController _playerController;
 
-        float _offset = 5f;
+        float _offset = 10f;
         private void Awake()
         {
             _playerController = FindObjectOfType<PlayerController>();
