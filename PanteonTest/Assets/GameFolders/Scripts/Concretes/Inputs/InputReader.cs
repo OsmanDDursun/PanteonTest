@@ -1,4 +1,5 @@
 ﻿using PanteonRemoteTest.Controllers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,23 +7,31 @@ using UnityEngine.InputSystem;
 
 namespace PanteonRemoteTest.Inputs
 {
-    public class InputReader
+    public class InputReader : MonoBehaviour
     {
-        PlayerInput _playerInput;
+        Vector3 _moveDirection;
+        bool _canMove;
 
-        public Vector3 MoveDirection { get; private set; }
+        public Vector3 MoveDirection => _moveDirection;
+        public bool CanMove => _canMove;
 
-        public InputReader(PlayerInput playerInput)
+        private void Update()
         {
-            _playerInput = playerInput;
-
-            _playerInput.currentActionMap.actions[0].performed += OnMove;  //WASD Inputs
-
+            if (Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height / 2)
+            {
+                _moveDirection = new Vector3(Map(Input.mousePosition.x, 0, Screen.width, -1, 1), 0f, Map(Input.mousePosition.y, 0, Screen.height / 2, -1, 1));
+                _canMove = true;
+            }
+            else
+            {
+                _moveDirection = new Vector3(0f, 0f, 0f);
+                _canMove = false;
+            }
         }
 
-        private void OnMove(InputAction.CallbackContext obj)
+        float Map(float val, float in1, float in2, float out1, float out2)
         {
-            MoveDirection = new Vector3(obj.ReadValue<Vector2>().x, 0f, obj.ReadValue<Vector2>().y); //Hareket Yönü MoveDirection prop una tanımlandı Return (-1,+1)
+            return Mathf.Clamp((out1 + (val - in1) * (out2 - out1) / (in2 - in1)), -1, 1);
         }
     }
 }

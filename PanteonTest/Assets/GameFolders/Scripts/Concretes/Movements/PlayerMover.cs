@@ -16,9 +16,10 @@ namespace PanteonRemoteTest.Movements
 
         public void MoveAction (Vector3 direction, float moveSpeed)
         {
-            //Vector3 worldPosition = _characterController.transform.TransformDirection(direction);
             if (direction == Vector3.zero) return;
-            Vector3 movement = direction * Time.deltaTime * moveSpeed;
+
+            Vector3 worldPosition = _characterController.transform.TransformDirection(Vector3.forward);
+            Vector3 movement = worldPosition * Time.deltaTime * moveSpeed;
             _characterController.Move(movement);
         }
     }
