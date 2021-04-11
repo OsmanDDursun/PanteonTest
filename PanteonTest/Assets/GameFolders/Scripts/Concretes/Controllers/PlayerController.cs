@@ -1,5 +1,6 @@
 ﻿using PanteonRemoteTest.Inputs;
 using PanteonRemoteTest.Movements;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,22 +16,34 @@ namespace PanteonRemoteTest.Controllers
         InputReader _input;
         PlayerMover _mover;
         PlayerRotator _playerRotator;
+        AnimationController _animationController;
 
         public float HorizontalMoveSpeed => _horizontalMoveSpeed;
+        public bool IsRunning => _input.IsRunning;
 
         private void Awake()
         {
             _input = GetComponent<InputReader>();
             _mover = new PlayerMover(this);
             _playerRotator = new PlayerRotator(this);
+            _animationController = new AnimationController(this);
 
+        }
+
+        private void Update()
+        {
+            _playerRotator.RotatePlayer(_input.MoveDirection, _rotateSpeed);
         }
 
         private void FixedUpdate()
         {
-            Debug.Log(_input.MoveDirection);
-            _playerRotator.RotatePlayer(_input.MoveDirection, _rotateSpeed);
+            //Debug.Log(_input.MoveDirection);
             _mover.MoveAction(_input.MoveDirection, _horizontalMoveSpeed);
+        }
+
+        private void LateUpdate()
+        {
+            _animationController.MoveAnimation(Convert.ToSingle(IsRunning));
         }
     }
 }

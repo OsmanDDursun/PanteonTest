@@ -10,22 +10,23 @@ namespace PanteonRemoteTest.Inputs
     public class InputReader : MonoBehaviour
     {
         Vector3 _moveDirection;
-        bool _canMove;
+        bool _isRunnig;
 
         public Vector3 MoveDirection => _moveDirection;
-        public bool CanMove => _canMove;
+        public bool IsRunning => _isRunnig;
+
 
         private void Update()
         {
             if (Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height / 2)
             {
                 _moveDirection = new Vector3(Map(Input.mousePosition.x, 0, Screen.width, -1, 1), 0f, Map(Input.mousePosition.y, 0, Screen.height / 2, -1, 1));
-                _canMove = true;
+                _isRunnig = true;
             }
             else
             {
                 _moveDirection = new Vector3(0f, 0f, 0f);
-                _canMove = false;
+                _isRunnig = false;
             }
         }
 
