@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 3774190861585203576}
   m_Layer: 0
   m_Name: RotatorObstacle
-  m_TagString: Untagged
+  m_TagString: RotatorObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb635a87fa76d24e8d38e62e464920a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 5
 --- !u!136 &8710961713468867221
 CapsuleCollider:
   m_ObjectHideFlags: 0

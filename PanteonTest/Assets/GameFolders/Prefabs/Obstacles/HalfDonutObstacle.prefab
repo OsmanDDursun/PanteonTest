@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6040471536764888782}
+  - component: {fileID: 969022827}
   m_Layer: 0
   m_Name: HalfDonutObstacle
-  m_TagString: Untagged
+  m_TagString: HalfDonutObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &969022827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423641065630502531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb635a87fa76d24e8d38e62e464920a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 10
 --- !u!64 &2534841437504193951
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -149,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 1204645097777561231, guid: c27713b906253844b9e86a70ae094252,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 2269038690642533460, guid: c27713b906253844b9e86a70ae094252,
         type: 3}

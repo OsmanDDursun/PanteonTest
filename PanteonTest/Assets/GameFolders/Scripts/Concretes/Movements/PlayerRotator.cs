@@ -18,7 +18,6 @@ namespace PanteonRemoteTest.Movements
             // (-1,0,-1) - (1,0,1)
             direction *= rotateSpeed * Time.deltaTime;
             _playerController.transform.rotation = Quaternion.Euler(new Vector3(0f, direction.x, 0f));
-            //_playerController.transform.Rotate(Vector3.up * direction.x * Time.deltaTime * rotateSpeed);
         }
     }
 }
