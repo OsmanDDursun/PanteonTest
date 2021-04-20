@@ -57,7 +57,7 @@ namespace PanteonRemoteTest.Managers
             IsGameOver = false;
             ReadyGame();
             SpawnController spawnController = FindObjectOfType<SpawnController>();
-            spawnController.CreateScene();
+            spawnController.CreateGameArea();
         }
 
         /*EVENTS*/

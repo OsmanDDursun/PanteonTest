@@ -33,7 +33,8 @@ namespace PanteonRemoteTest.UIs
         {
             while (!_paintDone)
             {
-                yield return new WaitForSeconds(1);
+                //yield return new WaitForSeconds(1);
+                yield return new WaitForEndOfFrame();
                 if (_input.IsPainting)
                 {
                     int percent = _wallPaintController.GetPaintPercent();

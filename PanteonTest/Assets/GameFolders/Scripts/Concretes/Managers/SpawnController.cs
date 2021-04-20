@@ -14,10 +14,6 @@ namespace PanteonRemoteTest.Managers
             _levelObjects = new List<GameObject>();
         }
 
-        private void Start()
-        {
-        }
-
         public void CreateGameArea()
         {
             Vector3 startPos = new Vector3(0, 0, 20);
@@ -70,11 +66,6 @@ namespace PanteonRemoteTest.Managers
                 }
             }
 
-        }
-
-        internal void CreateScene()
-        {
-            CreateGameArea();
         }
     }
 }

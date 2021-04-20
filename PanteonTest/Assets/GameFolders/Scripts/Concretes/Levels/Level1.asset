@@ -21,5 +21,5 @@ MonoBehaviour:
   _coinPrefab: {fileID: 2808542363669968934, guid: add8c2cc84f3c7c45ab0a9636ac8306c,
     type: 3}
   _obstacleFinishPos: {x: 0, y: 0, z: 80}
-  _opponentSpeed: 8
+  _opponentSpeed: 5
   _obstacleAvoidance: 4
