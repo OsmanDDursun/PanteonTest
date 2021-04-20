@@ -52,6 +52,7 @@ namespace PanteonRemoteTest.Managers
                         Vector3 oldPos = newPos;
                         newPos = new Vector3(Random.Range(-10, 10), newPos.y, newPos.z);
                         GameObject newCoin = Instantiate(coin, newPos, coin.transform.rotation);
+                        newCoin.transform.parent = gameObject.transform;
                         newPos = oldPos;
                         obstacleCount = 0;
                         coinCount++;
@@ -60,6 +61,7 @@ namespace PanteonRemoteTest.Managers
                     else
                     {
                         GameObject newObstacle = Instantiate(obstackle, newPos, coin.transform.rotation);
+                        newObstacle.transform.parent = gameObject.transform;
                         _levelObjects.Add(newObstacle);
                         obstacleCount++;
                     }
