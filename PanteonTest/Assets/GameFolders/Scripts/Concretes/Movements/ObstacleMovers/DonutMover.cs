@@ -18,7 +18,7 @@ namespace PanteonRemoteTest.Movements
         public void MoveAction(float moveSpeed)
         {
             // X 0.1 -> -0.67
-            float nextPoint = Mathf.Abs(Mathf.Sin((Time.time / moveSpeed) * 2 * Mathf.PI));
+            float nextPoint = Mathf.Abs(Mathf.Sin((Time.time * moveSpeed / 10) * 2 * Mathf.PI));
             nextPoint *= -0.67f;
             _movingStick.transform.localPosition = new Vector3(nextPoint, _movingStick.transform.localPosition.y, _movingStick.transform.localPosition.z);
         }

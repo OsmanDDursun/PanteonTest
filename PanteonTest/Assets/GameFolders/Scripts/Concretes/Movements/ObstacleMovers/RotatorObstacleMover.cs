@@ -19,8 +19,7 @@ namespace PanteonRemoteTest.Movements
 
         public void MoveAction(float moveSpeed)
         {
-            //_controller.rotation = Quaternion.Euler(Vector3.up * Time.deltaTime * moveSpeed);
-            _controller.Rotate(Vector3.up * Time.deltaTime * moveSpeed);
+            _controller.Rotate(Vector3.up * Time.deltaTime * moveSpeed * 20);
         }
     }
 }

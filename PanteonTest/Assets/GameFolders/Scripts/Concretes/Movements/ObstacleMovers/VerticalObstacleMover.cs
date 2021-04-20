@@ -17,9 +17,9 @@ namespace PanteonRemoteTest.Movements
 
         public void MoveAction(float moveSpeed)
         {
-            float nextPoint = Mathf.Sin((Time.time / moveSpeed) * 2 * Mathf.PI);
-            nextPoint *= 13f;
-            _obstacle.position = new Vector3(nextPoint, _obstacle.position.y, _obstacle.position.z);
+            float nextPoint = Mathf.Sin((Time.time * moveSpeed / 5) * 2 * Mathf.PI);
+            nextPoint *= 12f;
+            _obstacle.localPosition = new Vector3(nextPoint, _obstacle.localPosition.y, _obstacle.localPosition.z);
         }
     }
 }

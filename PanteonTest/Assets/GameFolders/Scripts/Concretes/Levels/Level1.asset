@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1472e6880d12ffc439a9eb6e755e0b7c, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  _obstacles:
+  - {fileID: 6639853961075246632, guid: 20c3b6e8f3a35584990ca5ce0c3f8422, type: 3}
+  - {fileID: 459478717975642445, guid: c8be9d0f5fe7a0c44942d27217bade75, type: 3}
+  - {fileID: 8234130381590741098, guid: e3bd063f65b56704287836291ef4aa0d, type: 3}
+  - {fileID: 5040104847424189092, guid: a5484acf2aac15f49a62644126ae217f, type: 3}
+  - {fileID: 6345223309565096423, guid: 785fb7bd83a99dd47a5eeeb8d4c851ab, type: 3}
+  _coinPrefab: {fileID: 2808542363669968934, guid: add8c2cc84f3c7c45ab0a9636ac8306c,
+    type: 3}
+  _obstacleFinishPos: {x: 0, y: 0, z: 80}
+  _opponentSpeed: 8
+  _obstacleAvoidance: 4

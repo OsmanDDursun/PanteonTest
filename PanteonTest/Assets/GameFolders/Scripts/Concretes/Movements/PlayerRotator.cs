@@ -13,11 +13,10 @@ namespace PanteonRemoteTest.Movements
             _playerController = playerController;
         }
 
-        public void RotatePlayer(Vector3 direction, float rotateSpeed)
+        public void RotatePlayer(float direction, float rotateSpeed)
         {
-            // (-1,0,-1) - (1,0,1)
-            direction *= rotateSpeed * Time.deltaTime;
-            _playerController.transform.rotation = Quaternion.Euler(new Vector3(0f, direction.x, 0f));
+            direction *= rotateSpeed * Time.fixedDeltaTime;
+            _playerController.transform.Rotate(Vector3.up * direction);
         }
     }
 }
