@@ -17,10 +17,11 @@ namespace PanteonRemoteTest.Controllers
         Vector3 _camOldPos;
         Quaternion _camOldRotation;
 
-        float _followOffset;
         bool _isPaintCamReady;
         bool _canFollow = true;
+
         public PlayerController Player => _playerController;
+        static public float CameraFollowOffset { get; private set; }
 
         private void Awake()
         {
@@ -28,7 +29,7 @@ namespace PanteonRemoteTest.Controllers
             _cameraMover = new CameraMover(this);
             _camOldPos = transform.position;
             _camOldRotation = transform.rotation;
-            _followOffset = Mathf.Abs(_playerController.transform.position.z - transform.position.z);
+            CameraFollowOffset = Mathf.Abs(_playerController.transform.position.z - transform.position.z);
         }
 
         private void FixedUpdate()
@@ -45,7 +46,7 @@ namespace PanteonRemoteTest.Controllers
             else
             {
                 if(_canFollow)
-                    _cameraMover.FollowPlayerWhileRunning(_followOffset);
+                    _cameraMover.FollowPlayerWhileRunning(CameraFollowOffset);
             }
         }
 

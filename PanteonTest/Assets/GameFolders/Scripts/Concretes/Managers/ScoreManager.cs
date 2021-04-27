@@ -5,6 +5,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using PanteonRemoteTest.Controllers;
+using PanteonRemoteTest.Movements;
 
 namespace PanteonRemoteTest.Managers
 {
@@ -15,15 +17,15 @@ namespace PanteonRemoteTest.Managers
 
         int _currentScore;
 
-        public event Action OnScoreGain;
-        public event Action OnResetScore;
+        public event Action OnCoinPickUp;
+
 
         public GameObject ScoreImage => _scoreImage;
         public int CurrentScore => _currentScore;
 
         private void Awake()
         {
-            MakeThisSingleton(this);
+            MakeThisSingleton(this);            
         }
 
         private void OnEnable()
@@ -41,19 +43,22 @@ namespace PanteonRemoteTest.Managers
             _scoreText.text = _currentScore.ToString();
         }
 
-        public void GainScore(int score)
+        public void GainScore(int score = 1)
         {
             _currentScore += score;
             UpdateScore();
-            OnScoreGain?.Invoke();
         }
 
         void ResetScore()
         {
             _currentScore = 0;
             UpdateScore();
-            OnResetScore?.Invoke();
         }
 
+        public void PickUpCoin()
+        {
+            GainScore();
+            OnCoinPickUp?.Invoke();
+        }
     }
 }

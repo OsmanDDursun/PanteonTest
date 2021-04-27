@@ -33,7 +33,7 @@ namespace PanteonRemoteTest.Managers
             GameManager.Instance.OnPaintDone += HandleOnWin;
             GameManager.Instance.OnPlayerLose += HandleOnLose;
             GameManager.Instance.OnPaintingGameReady += HandleOnPaintGameReady;
-            ScoreManager.Instance.OnScoreGain += HandleOnGainCoin;
+            ScoreManager.Instance.OnCoinPickUp += HandleOnCoinPickUp;
         }
 
         private void OnDisable()
@@ -43,7 +43,7 @@ namespace PanteonRemoteTest.Managers
             GameManager.Instance.OnPlayerWin -= HandleOnWin;
             GameManager.Instance.OnPaintDone -= HandleOnWin;
             GameManager.Instance.OnPlayerLose -= HandleOnLose;
-            ScoreManager.Instance.OnScoreGain -= HandleOnGainCoin;
+            ScoreManager.Instance.OnCoinPickUp -= HandleOnCoinPickUp;
             GameManager.Instance.OnPaintingGameReady -= HandleOnPaintGameReady;
         }
 
@@ -85,7 +85,7 @@ namespace PanteonRemoteTest.Managers
         {
             PlaySingleSound(MENU_SOUND, true);
         }
-        private void HandleOnGainCoin()
+        private void HandleOnCoinPickUp()
         {
             PlaySoundAlways(GAIN_COIN_SOUND);
         }
